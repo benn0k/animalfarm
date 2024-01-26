@@ -1,10 +1,20 @@
 import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
 import './App.css';
 
 function App() {
   const [animals, setAnimals] = useState([]);
+
+  const search = async (q) => {
+    // Get Data
+    const response =
+      (await fetch('http://localhost:8080?')) + new URLSearchParams({ q });
+
+    console.log(response);
+
+    //JSON Data, throw into
+    const data = await response.json();
+    setAnimals(data);
+  };
 
   return (
     <main>
@@ -13,7 +23,7 @@ function App() {
       <input
         type="text"
         placeholder="Search"
-        onChange={(e) => console.log(e.target.value)}
+        onChange={(e) => search(e.target.value)}
       />
 
       <ul>
