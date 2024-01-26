@@ -1,13 +1,12 @@
-import { useState } from 'react';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
 
 function App() {
   const [animals, setAnimals] = useState([]);
 
   const search = async (q) => {
     // Get Data
-    const response =
-      (await fetch('http://localhost:8080?')) + new URLSearchParams({ q });
+    const response = await fetch("http://localhost:8080?" + new URLSearchParams({ q }).toString());
 
     console.log(response);
 
@@ -20,23 +19,21 @@ function App() {
     <main>
       <h1>Animal Farm</h1>
 
-      <input
-        type="text"
-        placeholder="Search"
-        onChange={(e) => search(e.target.value)}
-      />
+      {/* //TODO a good exercise would be hooking up search to a button instead */}
+      <input type="text" placeholder="Search" onChange={(e) => search(e.target.value)} />
 
       <ul>
         {animals.map((animal) => (
           <Animal key={animal.id} {...animal}></Animal>
         ))}
 
-        {animals.length === 0 && 'No animals found'}
+        {animals.length === 0 && "No animals found"}
       </ul>
     </main>
   );
 }
 
+// TODO recommend this being placed in ./components/Animal.jsx
 function Animal({ type, name, age }) {
   return (
     <li>
