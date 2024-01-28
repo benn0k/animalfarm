@@ -1,8 +1,13 @@
-# React + Vite
+# 🐷 ANIMAL 🐮 FARM 🐥
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Come one, come all, to the Animal Farm! Animal Farm is a single-page React App built for querying and returning data from a database. 
 
-Currently, two official plugins are available:
+This app was built with:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [React](https://react.dev/) + [Next.js](https://nextjs.org/) 
+- [@vitejs](https://github.com/vitejs/vite-plugin-react-swc) ⚡
+- [Express](https://expressjs.com/)
+- [Chance](https://chancejs.com/) to fill the barn with animals
+
+
+To run, `npm install` + `npm run dev` // cd server `node .`
